@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #333;
+}
+
+#board{
+    background: #eee;
+    padding: 1rem;  
+}
+
+#mind-master{
+    background: lightskyblue;
+    padding: 0.5rem;
+}
