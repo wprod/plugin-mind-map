@@ -7,47 +7,86 @@
             var defauts = {
                 "mapObject": $(this),
                 "mindSize": "200px",
-                "mapSize": $(this).width(),
+                "mapWidth": $(this).width() + "px",
+                "mapHeight": $(this).height() + "px",
             };
 
             //PARAMS FUSION
             var parametres = $.extend(defauts, options);
-            parametres.mapObject.html('<div id="board" width="' + parametres.mapSize + '"></div>');
+            parametres.mapObject.html('<div id="board" style="width:' + parametres.mapWidth + '; height:' + parametres.mapHeight + ';"   ></div>');
 
             //SETUP
+
             $('#board').keyup(function (event) {
                 if (event.keyCode == '10') {
                     event.preventDefault();
                 }
             });
-            var insert_mindMaster = function (txt) {
-                    $("#board").append('<div id="mind-master">' + txt + '</div>');
+
+            var totNodes = 0,
+                insert_mindMaster = function (txt) {
+                    $("#board").append('<div id="mind-master" class="mind-node"><h3>' + txt + '</h3></div>');
                 },
                 insert_node = function (node, txt) {
-                    $(node).append('<div class="mind-node" style="width:' + parametres.mindSize + '">' + txt + '</div>');
+                    totNodes++;
+                    $(node).append('<div id="mindMapId_' + totNodes + '" class="mind-node ui-draggable ui-draggable-handle" style="width:' + parametres.mindSize + '"><span>' + txt + '</span></div>');
+                    $(node).append('<svg><line id="' + totNodes + '" from="' + $(node).attr("id") + '" to="mindMapId_' + totNodes + '"/></svg>');
+                },
+                drawAll = function () {
+                    totNodes = $("svg").length;
+                    for (i = 1; i <= totNodes; i++) {
+                        $("#" + i + "")
+                            .attr('x1', $("#" + $("#" + i + "").attr("to")).position().left)
+                            .attr('y1', $("#" + $("#" + i + "").attr("to")).position().top)
+                            .attr('x2', 0)
+                            .attr('y2', 0);
+                    }
                 };
 
             insert_mindMaster("Rush Epitech A.Witters");
-            insert_node($("#mind-master"), "MindMap");
+            insert_node($("#mind-master"), "Rush MVC");
+            insert_node($("#mindMapId_1"), "Classes");
+            insert_node($("#mindMapId_2"), "Products");
+            insert_node($("#mindMapId_2"), "Connection");
+            insert_node($("#mindMapId_2"), "Kart");
+            insert_node($("#mindMapId_4"), "Logs");
+            insert_node($("#mindMapId_4"), "Pdo");
+            insert_node($("#mindMapId_4"), "Mysql");
 
             //EVENT LISTENERS
             var form = '<form id="dataForm"><input id="data"><button id="add">Add</button></form>';
 
             $(".mind-node").dblclick(function (event) {
+                $("#dataForm").remove(); //Delete if exists somewere else.
                 $(event.target).append(form);
+                $("#dataForm").hide().slideDown("fast"); //Animations
+                $("#data").focus();
                 $("#add").click(function (e) {
                     e.preventDefault();
                     if ($("#data").val()) {
                         insert_node($(this).parent().parent(), $("#data").val());
                     }
                     $("#dataForm").remove();
+                    drawAll();
                 });
             });
-            $(function () {
-                $(".mind-node").mousedown(function (event) {
-                    $(event.target).draggable();
+            
+            $(".mind-node span.close").click(function(event){
+                $(event.target).parent().next().remove();
+                $(event.target).parent().remove();
+            });
+
+            $(".mind-node").mousedown(function (event) {
+                $(".mind-node").draggable({
+                    drag: function () {
+                        drawAll();
+                    },
+                    containment: "#board",
+                    scroll: false
                 });
             });
+            $("*").mousedown();
+            drawAll();
         },
     });
 

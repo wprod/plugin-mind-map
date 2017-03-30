@@ -11,38 +11,108 @@
 }
 
 /** Regular */
+
 @font-face {
-  font-family: "San Francisco";
-  font-weight: 400;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
 
-/** Bold */ 
-@font-face {
-  font-family: "San Francisco";
-  font-weight: 700;
-  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-}
+/** Bold */
 
-#board {
-    background: #eee;
-    padding: 1rem;
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 700;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
 
 #mind-master {
-    background: lightskyblue;
+    background-image: linear-gradient(-20deg, #88d3ce 0%, #6e45e2 100%);
     padding: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+    height: 3rem;
+    border-radius: 0.3rem;
+    margin-bottom: 3rem;
 }
 
-.mind-node {
-    background: lightsteelblue;
+#mind-master h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+#mind-master:before {
+    background: #81abd4;
+    content: "";
+    display: block;
+    height: 1.5rem;
+    position: absolute;
+    width: 1.5rem;
+    left: -0.75rem;
+    top: -0.75rem;
+    border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.28);
+}
+
+#mind-master span {
+    /* TODO */
+}
+
+#board {
+    background: rgba(238, 238, 238, 0.44);
+    padding: 1rem;
+}
+
+#mind-master .mind-node {
+    font-size: 1.3rem;
+    background: rgba(176, 196, 222, 0.8);
     padding: 0.5rem;
-    margin: 0.5rem;
-    border: 1px solid #d2d2d2;
-}
-form {
-    border: 5px solid #eeeeee;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 2.3rem;
+    text-align: left;
 }
 
+#mind-master .mind-node:before {
+    background: #6f4de0;
+    content: "";
+    display: block;
+    height: 1.5rem;
+    position: absolute;
+    width: 1.5rem;
+    left: -0.75rem;
+    top: -0.75rem;
+    border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.28);
+}
 
+#mind-master form {
+    border: 0.5rem solid #36aed4;
+    border-radius: .3rem;
+    position: absolute;
+    margin: 1rem 0;
+}
+
+#mind-master svg {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+}
+
+#mind-master line {
+    stroke:black;
+    stroke-width:10;
+    stroke-linecap:round;
+}
+
+#line1 {
+    stroke-width: 2px;
+    stroke: rgb(0, 0, 0);
+}
