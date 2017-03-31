@@ -52,8 +52,8 @@
             insert_node($("#mindMapId_2"), "Connection");
             insert_node($("#mindMapId_2"), "Kart");
             insert_node($("#mindMapId_4"), "Logs");
-            insert_node($("#mindMapId_4"), "https://i.giphy.com/3oEjHFOscgNwdSRRDy.gif");
-            insert_node($("#mindMapId_4"), "https://media.giphy.com/media/SgwPtMD47PV04/giphy.gif");
+            insert_node($("#mindMapId_4"), "Thug");
+            insert_node($("#mindMapId_4"), "Life");
 
             //EVENT LISTENERS
             var form = '<form id="dataForm" class="add"><input id="data"><button id="add">Add</button></form>';
