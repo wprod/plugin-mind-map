@@ -1,3 +1,10 @@
+/** 1_ SHARED 
+    2_ MIND MASTER 
+    3_ MIND NODE 
+    4_ FORMS 
+    5_ SVG **/
+
+/** 1_ SHARED **/
 * {
     box-sizing: border-box;
     font-family: "San Francisco", sans-serif;
@@ -9,39 +16,37 @@
     -ms-user-select: none;
     user-select: none;
 }
-
-/** Regular */
-
+#board {
+    background: rgba(238, 238, 238, 0.44);
+    padding: 1rem;
+}
 @font-face {
     font-family: "San Francisco";
     font-weight: 400;
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
-
-
-/** Bold */
-
 @font-face {
     font-family: "San Francisco";
     font-weight: 700;
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
 }
 
+
+/** 2_ MIND MASTER  **/
 #mind-master {
     background-image: linear-gradient(-20deg, #88d3ce 0%, #6e45e2 100%);
-    padding: 0.5rem;
+    padding: .5rem .5rem .5rem 1rem;
     box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
     height: 3rem;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     margin-bottom: 3rem;
 }
-
-#mind-master h3{
+#mind-master h3 {
     color: white;
     font-size: 2rem;
     font-weight: 400;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.42);
 }
-
 #mind-master:before {
     background: #81abd4;
     content: "";
@@ -57,25 +62,20 @@
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.28);
 }
 
+/** 3_ MIND NODE  **/
 #mind-master span {
-    /* TODO */
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.33);
 }
-
-#board {
-    background: rgba(238, 238, 238, 0.44);
-    padding: 1rem;
-}
-
 #mind-master .mind-node {
     font-size: 1.3rem;
-    background: rgba(176, 196, 222, 0.8);
-    padding: 0.5rem;
+    background: rgba(135, 206, 207, 0.83);
+    padding: .5rem .5rem .5rem 1rem;
     box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.1);
     height: 2.3rem;
+    border-radius: 0.2rem;
     text-align: left;
 }
-
 #mind-master .mind-node:before {
     background: #6f4de0;
     content: "";
@@ -90,14 +90,29 @@
     -webkit-border-radius: 2rem;
     box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.28);
 }
-
-#mind-master form {
-    border: 0.5rem solid #36aed4;
-    border-radius: .3rem;
-    position: absolute;
-    margin: 1rem 0;
+#mind-master img {
+    border-radius: 0.3rem;
+    background: #80a9d4;
+    margin: .3rem -.1rem;
 }
 
+/** 4_ FORMS **/
+#mind-master form {
+    border-radius: .3rem;
+    position: absolute;
+    display: flex;
+    top: 30px;
+    margin: 1rem 0;
+    padding: .5rem;
+}
+#mind-master form.mod {
+    background: #ff6147;
+}
+#mind-master form.add {
+    background: #39d431;
+}
+   
+/** 5_ SVG **/
 #mind-master svg {
     z-index: -1;
     position: absolute;
@@ -105,14 +120,41 @@
     left: 0;
     overflow: visible;
 }
-
 #mind-master line {
-    stroke:black;
-    stroke-width:10;
-    stroke-linecap:round;
+    stroke: black;
+    stroke-width: 10;
+    stroke-linecap: round;
 }
 
-#line1 {
-    stroke-width: 2px;
-    stroke: rgb(0, 0, 0);
+/** CHEAT :p **/
+#mind-master #mindMapId_1 {
+    background: rgba(112, 83, 224, 0.83);
+}
+
+#mind-master #mindMapId_2 {
+    background: rgba(116, 101, 221, 0.83);
+}
+
+#mind-master #mindMapId_3 {
+    background: rgba(117, 110, 220, 0.83);
+}
+
+#mind-master #mindMapId_4 {
+    background: rgba(120, 120, 219, 0.83);
+}
+
+#mind-master #mindMapId_6 {
+    background: rgba(125, 151, 214, 0.83);
+}
+
+#mind-master #mindMapId_7 {
+    background: rgba(129, 173, 211, 0.83);
+}
+
+#mind-master #mindMapId_8 {
+    background: rgba(132, 189, 209, 0.83);
+}
+
+#mind-master #mindMapId_9 {
+    background: rgba(135, 206, 207, 0.83);
 }
