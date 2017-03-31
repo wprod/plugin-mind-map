@@ -46,14 +46,14 @@
                 };
 
             insert_mindMaster("Rush Epitech A.Witters");
-            insert_node($("#mind-master"), "Rush MVC");
-            insert_node($("#mindMapId_1"), "Classes");
-            insert_node($("#mindMapId_2"), "Products");
-            insert_node($("#mindMapId_2"), "Connection");
-            insert_node($("#mindMapId_2"), "Kart");
-            insert_node($("#mindMapId_4"), "Logs");
-            insert_node($("#mindMapId_4"), "Thug");
-            insert_node($("#mindMapId_4"), "Life");
+            // insert_node($("#mind-master"), "Rush MVC");
+            // insert_node($("#mindMapId_1"), "Classes");
+            // insert_node($("#mindMapId_2"), "Products");
+            // insert_node($("#mindMapId_2"), "Connection");
+            // insert_node($("#mindMapId_2"), "Kart");
+            // insert_node($("#mindMapId_4"), "Logs");
+            // insert_node($("#mindMapId_4"), "Thug");
+            // insert_node($("#mindMapId_4"), "Life");
 
             //EVENT LISTENERS
             var form = '<form id="dataForm" class="add"><input id="data"><button id="add">Add</button></form>';
